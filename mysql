@@ -1,0 +1,1287 @@
+-- phpMyAdmin SQL Dump
+
+-- version 4.9.5
+
+-- https://www.phpmyadmin.net/
+
+--
+
+-- Host: localhost:3306
+
+-- Generation Time: Nov 11, 2020 at 06:43 PM
+
+-- Server version: 10.2.35-MariaDB
+
+-- PHP Version: 7.3.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+
+SET AUTOCOMMIT = 0;
+
+START TRANSACTION;
+
+SET time_zone = "+00:00";
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+
+-- Database: `redg6122_android_eac`
+
+--
+
+-- --------------------------------------------------------
+
+--
+
+-- Table structure for table `tb_arrivalcard`
+
+--
+
+CREATE TABLE `tb_arrivalcard` (
+
+  `idarrival` varchar(35) NOT NULL,
+
+  `flightno` varchar(255) DEFAULT NULL,
+
+  `occupation` varchar(255) DEFAULT NULL,
+
+  `purposeofvisit` varchar(255) DEFAULT NULL,
+
+  `accomodation` varchar(255) DEFAULT NULL,
+
+  `intendedlengthofstay` int(255) DEFAULT NULL,
+
+  `addressinindonesia` longtext DEFAULT NULL,
+
+  `city` varchar(255) DEFAULT NULL,
+
+  `hotelname` varchar(255) DEFAULT '',
+
+  `idcity` int(255) DEFAULT NULL,
+
+  `idprofile` int(255) DEFAULT NULL,
+
+  `arrivaldate` date DEFAULT NULL,
+
+  `otherdst` varchar(255) DEFAULT NULL,
+
+  `emergencyname` varchar(255) DEFAULT NULL,
+
+  `emergencyphone` varchar(255) DEFAULT NULL
+
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+
+-- Dumping data for table `tb_arrivalcard`
+
+--
+
+INSERT INTO `tb_arrivalcard` (`idarrival`, `flightno`, `occupation`, `purposeofvisit`, `accomodation`, `intendedlengthofstay`, `addressinindonesia`, `city`, `hotelname`, `idcity`, `idprofile`, `arrivaldate`, `otherdst`, `emergencyname`, `emergencyphone`) VALUES
+
+('AR211020000001', 'F1234567', 'Teacher', 'Holiday or Visiting Friends or Relatives', 'Hotel', 14, 'Jalan Raya Cibabat No. 11 Cimahi', 'Kota Cimahi', 'Hotel Tjimahi', 4, 1, '2020-10-21', 'Kota Bandung', 'Deden Firmansyah', '081399988877'),
+
+('AR221020000001', 'F112233', 'Student', 'Holiday or Visiting Friends or Relatives', 'Hotel', 7, 'Jalan Pajajaran No. 11 Bogor', 'Kota Bogor', 'Hotel Bogor', 11, 2, '2020-10-22', 'Kota Bandung', 'Jimmy Pardede', '08134455667'),
+
+('AR211020000002', 'F665544', 'Student', 'Business', 'Hotel', 4, 'Jalan Pasteur No. 11 Kota Bandung', 'Kota Bandung', 'Hotel Vio', 1, 3, '2020-10-21', 'Kota Cimahi', 'Toni Firmansyah', '081911145578'),
+
+('AR211020000003', 'F543210', 'Student', 'Education', 'Hotel', 7, 'Jalan ABC No. 11 Kota Bandung', 'Kota Bandung', 'Hotel ABC', 1, 4, '2020-10-21', 'Kabupaten Bandung', 'Sri Rejeki', '08158889996'),
+
+('AR301020000001', 'MV queens island', 'Factory worker', 'Official Mission', 'Hotel', 15, 'Jalan A Yani No 77', 'Kabupaten Bogor', 'Hotel baru', 12, 6, '2020-10-30', 'Rajaampat', 'Anggara', 'None'),
+
+('AR221020000002', 'F7654321', 'Student', 'Convention', 'Hotel', 4, 'Jalan Sumatera', 'Kota Bandung', 'Hotel Santika', 1, 1, '2020-10-22', 'Kota Cimahi', 'Deden Firmansyah', '08134455667'),
+
+('AR301020000002', 'MV Queens Land', 'Technician', 'Business', 'Hotel', 12, 'Jl. A Yani no 234', 'Kabupaten Indramayu', 'Hotel Angkasa', 10, 1, '2020-10-30', 'Tasikmalaya, Pangandaran Beach', 'Nandar Sukandar', '02283728172'),
+
+('AR261020000001', 'MH465', 'TEACHER', 'Holiday or Visiting Friends or Relatives', 'Hotel', 7, 'RANCAMAYA', 'Kabupaten Bogor', 'MERCURE', 12, 6, '2020-10-26', 'BANDUNG', 'BAMBANG', '0812776699'),
+
+('AR261020000002', 'F1234567', 'Entrepreneur', 'Business', 'Hotel', 14, 'Jalan Sumatera No. 11 Bandung', 'Kota Bandung', 'Hotel Santika', 1, 10, '2020-10-26', 'Lembang', 'Ali Sadaqat', '081344455567'),
+
+('AR261020000003', 'FC123456', 'Entrepreneur', 'Business', 'Hotel', 30, 'Jalan Raya Cibabat No. 11 Kota CImahi', 'Kota Cimahi', 'Hotel Tjimahi', 4, 11, '2020-10-26', 'Kota Bandung', 'Deden Firmansyah', '081311177788'),
+
+('AR261020000004', 'FI123456', 'Student', 'Education', 'Hotel', 60, 'Jalan Sumatera No. 11 Kota Bandung', 'Kota Bandung', 'Hotel Santika', 1, 13, '2020-10-26', 'Cimahi', 'Deden Firmansyah', '081311145578'),
+
+('AR271020000001', 'FK12345', 'Student', 'Education', 'Hotel', 90, 'Jalan Ganesha No. 11 Bandung', 'Kota Bandung', 'Hotel Vio', 1, 14, '2020-10-27', 'Lembang', 'Deden Firmansyah', '081311145578'),
+
+('AR281020000001', 'Perahu', 'Awak', 'Business', 'Hotel', 4, 'Jl. Jotel', 'Kabupaten Subang', 'Hotel', 13, 15, '2020-10-28', 'Non', 'Perusahaan', '000'),
+
+('AR281020000002', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'Aston', 1, 18, '2020-10-28', 'Halim', 'Cecep', '0852215111'),
+
+('AR281020000003', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur Bandung', 'Kota Bandung', 'Aston', 1, 16, '2020-10-28', 'Halim PK', 'Pt. Dirgantara Indonesia', '0852215111'),
+
+('AR281020000004', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'Aston', 1, 18, '2020-10-28', 'Halim', 'Cecep', '0852215111'),
+
+('AR281020000005', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur Bandung', 'Kota Bandung', 'Aston', 1, 16, '2020-10-28', 'Halim PK', 'PT. DI', '0852215111'),
+
+('AR281020000006', 'TU 501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'Aston', 1, 17, '2020-10-28', 'Halim', 'PT DI', '0852215111'),
+
+('AR281020000007', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur', 'Kota Bandung', 'Aston', 1, 19, '2020-10-28', 'Halim', 'PT DI', '0852215111'),
+
+('AR281020000008', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'aston', 1, 20, '2020-10-28', 'Halim', 'PTDI', '0852215111'),
+
+('AR281020000009', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'Aston', 1, 21, '2020-10-28', 'Halim', 'PTDI', '0852215111'),
+
+('AR281020000010', 'TU501', 'CREW', 'Official Mission', 'Hotel', 60, 'Pasteur', 'Kota Bandung', 'AstOn', 1, 25, '2020-10-28', 'Halim', 'PT DI', '0852215111'),
+
+('AR281020000011', 'Redi1', 'Worker', 'Business', 'Apartment', 15, 'Ciumbuleuit', 'Kabupaten Bandung', 'Parahyang residence', 2, 1, '2020-10-28', 'None', 'None', 'None'),
+
+('AR281020000012', 'TU 501', 'CREW', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'Aston', 1, 30, '2020-10-28', 'Halum', 'PT DI', '0852215111'),
+
+('AR281020000013', 'TU 501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'Aston', 1, 29, '2020-10-28', 'Halom', 'PT DI', '0852215111'),
+
+('AR281020000014', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'Aston', 1, 28, '2020-10-28', 'Halim', 'PT DI', '0852215111'),
+
+('AR281020000015', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'Aston', 1, 31, '2020-10-28', 'Halim', 'PT DU', '0852215111'),
+
+('AR281020000016', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'Aston', 1, 27, '2020-10-28', 'Halim', 'PT DI', '0852215111'),
+
+('AR281020000017', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'Aston', 1, 32, '2020-10-28', 'Halim', 'PT DI', '0852215111'),
+
+('AR281020000018', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'Aston', 1, 24, '2020-10-28', 'Halim', 'PT DI', '0852215111'),
+
+('AR281020000019', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'Aston', 1, 23, '2020-10-28', 'Halim', 'PT DU', '0852215111'),
+
+('AR281020000020', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'aston', 1, 22, '2020-10-28', 'Halim', 'PR DI', '0852215111'),
+
+('AR291020000001', 'FI123456', 'Student', 'Education', 'Hotel', 30, 'Jalan Pasteur No. 11 Bandung', 'Kota Bandung', 'Hotel Vio', 1, 9, '2020-10-29', 'Jakarta', 'Deden Firmansyah', '081311145578'),
+
+('AR291020000002', 'FI123456', 'Student', 'Education', 'Hotel', 60, 'Jalan Pasteur No. 11 Bandung', 'Kota Bandung', 'Hotel Vio', 1, 8, '2020-10-29', 'Jakarta', 'Deden Firmansyah', '081311145578'),
+
+('AR281020000021', 'TU501', 'Crew', 'Official Mission', 'Hotel', 60, 'Pasteur bandung', 'Kota Bandung', 'Aston', 1, 25, '2020-10-28', 'Halim', 'PT DI', '0852215111'),
+
+('AR291020000003', 'FJ123456', 'Student', 'Education', 'Hotel', 60, 'Jalan Pasteur No. 11 Bandung', 'Kota Bandung', 'Hotel Vio', 1, 7, '2020-10-29', 'Jakarta', 'Deden Firmansyah', '081311145578'),
+
+('AR281020000022', 'MV Xiang Rui Kou', 'Captain', 'Business', 'Others', 8, 'On Ship', 'Kabupaten Subang', 'On Ship', 13, 34, '2020-10-28', 'none', 'Ahmad Ghozali', '081285593974'),
+
+('AR281020000023', 'MV Xiang Rui Kou', 'Engineer', 'Business', 'Others', 8, 'On Ship', 'Kabupaten Subang', 'On Ship', 13, 35, '2020-10-28', 'Kure, Japan', 'Ahmad Gozali', '+6281285593974'),
+
+('AR281020000024', 'MV Xiang Rui Kou', 'P/COM', 'Business', 'Others', 8, 'On Ship', 'Kabupaten Subang', 'On Ship', 13, 36, '2020-10-28', 'Kure, Japan', 'Ahmad Gozali', '+6281285593974'),
+
+('AR281020000025', 'MV Xiang Rui Kou', 'CH/OFF', 'Business', 'Others', 8, 'On Ship', 'Kabupaten Subang', 'On Ship', 13, 37, '2020-10-28', 'Kure, Japan', 'Ahmad Gozali', '+6281285593974'),
+
+('AR281020000026', 'MV Xiang Rui Kou', '2ND/OFF', 'Business', 'Others', 8, 'On Ship', 'Kabupaten Subang', 'On Ship', 13, 38, '2020-10-28', 'Kure, Japan', 'Ahmad Gozali', '+6281285593974'),
+
+('AR281020000027', 'MV Xiang Rui Kou', '3RD/OFF', 'Business', 'Others', 8, 'On Ship', 'Kabupaten Subang', 'On Ship', 13, 39, '2020-10-28', 'Kure, Japan', 'Ahmad Gozali', '+6281285593974'),
+
+('AR021120000001', 'MV Xiang Rui Kou', 'ABK', 'Official Mission', 'Others', 8, 'on ship', 'Kabupaten Subang', 'On Ship', 13, 1, '2020-11-02', 'none', 'mv', 'mv'),
+
+('AR031120000001', 'FJ123456', 'Student', 'Education', 'Hotel', 14, 'Jalan Surapati No. 11 Bandung', 'Kota Bandung', 'Hotel Yehezkiel', 1, 42, '2020-11-03', 'Lembang', 'Jimmy Pardede', '081311145578'),
+
+('AR281120000001', 'MV Xiang Rui Kou', 'Bosun', 'Business', 'Others', 8, 'On Ship', 'Kabupaten Subang', 'On Ship', 13, 43, '2020-11-28', 'Kure, Japan', 'Ahmad Gozali', '+6281285593974'),
+
+('AR111120000001', 'Dummy1', 'Factory Worker', 'Business', 'Hotel', 2, 'Pasteur', 'Kabupaten Bogor', 'Hotel vio', 12, 44, '2020-11-11', 'Jakarta', 'None', 'None'),
+
+('AR281020000028', 'MV Xiang Rui Kou', 'A.B.', 'Business', 'Others', 8, 'On Ship', 'Kabupaten Subang', 'On Ship', 13, 47, '2020-10-28', 'Kure, Japan', 'Ahmad Gozali', '+6281285593974'),
+
+('AR281020000029', 'MV Xiang Rui Kou', 'A.B.', 'Business', 'Others', 8, 'On Ship', 'Kabupaten Subang', 'On Ship', 13, 49, '2020-10-28', 'Kure, Japan', 'Ahmad Gozali', '+6281285593974'),
+
+('AR031120000002', 'FN0001', 'Student', 'Leisure', 'Hotel', 14, 'Kota Baru Parahyangan No. 11 Bandung Barat', 'Kabupaten Bandung Barat', 'Mason Pine', 3, 46, '2020-11-03', 'Lembang', 'Fauzie', '081311145578'),
+
+('AR281020000030', 'MV Xiang Rui Kou', '3RD/ENG', 'Business', 'Others', 8, 'On Ship', 'Kabupaten Subang', 'On Ship', 13, 57, '2020-10-28', 'Kure, Japan', 'Ahmad Gozali', '+6281285593974'),
+
+('AR281020000031', 'MV Xiang Rui Kou', 'M.M.', 'Business', 'Others', 8, 'On Ship', 'Kabupaten Subang', 'On Ship', 13, 60, '2020-10-28', 'Kure, Japan', 'Ahmad Gozali', '+6281285593974'),
+
+('AR281020000032', 'MV Xiang Rui Kou', 'ELEC/ENG', 'Business', 'Others', 8, 'On Ship', 'Kabupaten Subang', 'On Ship', 13, 63, '2020-10-28', 'Kure, Japan', 'Ahmad Gozali', '+6281285593974'),
+
+('AR281020000033', 'MV Xiang Rui Kou', 'CH/COOK', 'Business', 'Others', 8, 'On Ship', 'Kabupaten Subang', 'On Ship', 13, 66, '2020-10-28', 'Kure, Japan', 'Ahmad Gozali', '+6281285593974'),
+
+('AR061120000001', 'Test 472', 'Test', 'Business', 'Hotel', 20, 'Jalan cipto cirebon', 'Kabupaten Cirebon', 'Swiss bell in', 7, 70, '2020-11-06', 'Jogjakarya', 'Test', '08111'),
+
+('AR061120000002', 'Mh711', 'Accountant', 'Holiday or Visiting Friends or Relatives', 'Hotel', 15, 'Csb', 'Kota Cirebon', 'Swiss bell hotel', 6, 69, '2020-11-06', 'Semarang', 'Deden', '+62813344232#'),
+
+('AR081120000001', 'CATA202', 'CREW', 'Official Mission', 'Hotel', 1, 'Dago', 'Kota Bandung', 'Cortyard', 1, 71, '2020-11-08', 'Brunei', 'Iwan', '082120179178'),
+
+('AR081120000002', 'CATA202', 'CREW', 'Official Mission', 'Hotel', 1, 'Dago', 'Kota Bandung', 'Cortyard', 1, 72, '2020-11-08', 'Brunei', 'Iwan', '082120179178'),
+
+('AR081120000003', 'CATA202', 'CREW', 'Official Mission', 'Hotel', 1, 'Dago', 'Kota Bandung', 'Cortyard', 1, 73, '2020-11-08', 'Brunei', 'Yoyo', '08122336644'),
+
+('AR081120000004', 'CATA202', 'CREW', 'Official Mission', 'Hotel', 1, 'Dago', 'Kota Bandung', 'Cortyard', 1, 74, '2020-11-08', 'Brunei', 'Iwan', '082120179178'),
+
+('AR081120000005', 'CATA202', 'Crew', 'Official Mission', 'Hotel', 1, 'Dago', 'Kota Bandung', 'Courtyard', 1, 75, '2020-11-08', 'Brunei', 'Yoyok', '08122336644'),
+
+('AR101120000001', 'FI123456', 'Entrepreneur', 'Business', 'Hotel', 60, 'Jalan Sumatera No. 11 Bandung', 'Kota Bandung', 'Hotel Santika', 1, 76, '2020-11-10', 'Kota Cimahi', 'Jimmy Pardede', '081366677789'),
+
+('AR101120000002', 'FI987654', 'Entrepreneur', 'Business', 'Hotel', 60, 'Jalan Sumatera No. 11 Bandung', 'Kota Bandung', 'Hotel Santika', 1, 77, '2020-11-10', 'Kota Cimahi', 'Jimmy Pardede', '081311145578'),
+
+('AR101120000003', 'FI987654', 'Entrepreneur', 'Business', 'Hotel', 60, 'Jalan Sumatera No. 11 Bandung', 'Kota Bandung', 'Hotel Santika', 1, 78, '2020-11-10', 'Kota Cimahi', 'Jimmy Pardede', '081311145578'),
+
+('AR101120000004', 'mi323', 'housewife', 'Holiday or Visiting Friends or Relatives', 'Hotel', 15, 'Jl pangandaran', 'Kabupaten Banjar', 'Hotel pangandaran indah', 26, 79, '2020-11-10', 'Jakarta', 'Ramses', '08122344241522'),
+
+('AR101120000005', 'CATA202', 'CREW', 'Official Mission', 'Hotel', 1, 'Bandung', 'Kota Bandung', 'Cortyard', 1, 71, '2020-11-10', 'Brunei', 'Iwan', '082120179178'),
+
+('AR101120000006', 'CATA 202', 'Crew', 'Official Mission', 'Hotel', 1, 'Dago', 'Kabupaten Bandung', 'Courtyard Dago', 2, 75, '2020-11-10', 'Brunai', 'Iwank', '+6282120179178'),
+
+('AR101120000007', 'CATA202', 'CREW', 'Official Mission', 'Hotel', 1, 'Dago Bandung', 'Kota Bandung', 'Cortyard', 1, 72, '2020-11-10', 'Brunei', 'Iwan', '082120179178'),
+
+('AR101120000008', 'CATA202', 'Crew', 'Official Mission', 'Hotel', 1, 'Dago', 'Kota Bandung', 'Courtyard', 1, 80, '2020-11-10', 'Brunei Darusalam', 'Suci Ferdian', '082389005229'),
+
+('AR101120000009', 'CATA202', 'CREW', 'Official Mission', 'Hotel', 1, 'Dago', 'Kota Bandung', 'Cortyard', 1, 73, '2020-11-10', 'Brunei', 'Iwan', '08'),
+
+('AR101120000010', 'CATA202', 'CREW', 'Official Mission', 'Hotel', 1, 'Dago Bandung', 'Kota Bandung', 'Cortyard', 1, 74, '2020-11-10', 'Brunei', 'Iwan', '082120179178');
+
+-- --------------------------------------------------------
+
+--
+
+-- Table structure for table `tb_arrivalprofile`
+
+--
+
+CREATE TABLE `tb_arrivalprofile` (
+
+  `idarrival` varchar(255) NOT NULL,
+
+  `idprofile` int(255) NOT NULL,
+
+  `passport` varchar(255) DEFAULT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+
+-- Dumping data for table `tb_arrivalprofile`
+
+--
+
+INSERT INTO `tb_arrivalprofile` (`idarrival`, `idprofile`, `passport`) VALUES
+
+('AR211020000001', 1, 'AR211020000001-1.jpg'),
+
+('AR221020000001', 2, 'AR221020000001-2.JPG'),
+
+('AR211020000002', 3, 'AR211020000002-3.JPG'),
+
+('AR211020000003', 4, 'AR211020000003-4.jpg'),
+
+('AR211020000003', 5, 'AR211020000003-5.JPG'),
+
+('AR301020000001', 6, 'AR301020000001-6.jpg'),
+
+('AR221020000002', 1, 'AR221020000002-1.jpg'),
+
+('AR301020000002', 1, 'AR301020000002-1.jpeg'),
+
+('AR261020000001', 6, 'AR261020000001-6.jpeg'),
+
+('AR261020000002', 10, 'AR261020000002-10.jpeg'),
+
+('AR261020000003', 11, 'AR261020000003-11.jpeg'),
+
+('AR261020000003', 12, 'AR261020000003-12.jpeg'),
+
+('AR261020000004', 13, 'AR261020000004-13.jpeg'),
+
+('AR271020000001', 14, 'AR271020000001-14.jpg'),
+
+('AR281020000001', 15, 'AR281020000001-15.jpg'),
+
+('AR281020000002', 18, 'AR281020000002-18.jpg'),
+
+('AR281020000003', 16, 'AR281020000003-16.jpg'),
+
+('AR281020000004', 18, 'AR281020000004-18.jpg'),
+
+('AR281020000005', 16, 'AR281020000005-16.jpg'),
+
+('AR281020000006', 17, 'AR281020000006-17.jpg'),
+
+('AR281020000007', 19, 'AR281020000007-19.jpg'),
+
+('AR281020000008', 20, 'AR281020000008-20.jpg'),
+
+('AR281020000009', 21, 'AR281020000009-21.jpg'),
+
+('AR2810200000010', 22, 'AR2810200000010-22.jpg'),
+
+('AR2810200000010', 23, 'AR2810200000010-23.jpg'),
+
+('AR2810200000010', 25, 'AR2810200000010-25.jpg'),
+
+('AR281020000011', 1, 'AR281020000011-1.jpg'),
+
+('AR281020000012', 30, 'AR281020000012-30.jpg'),
+
+('AR281020000013', 29, 'AR281020000013-29.jpg'),
+
+('AR281020000014', 28, 'AR281020000014-28.jpg'),
+
+('AR281020000015', 31, 'AR281020000015-31.jpg'),
+
+('AR281020000016', 27, 'AR281020000016-27.jpg'),
+
+('AR281020000017', 32, 'AR281020000017-32.jpg'),
+
+('AR281020000018', 24, 'AR281020000018-24.jpg'),
+
+('AR281020000019', 23, 'AR281020000019-23.jpg'),
+
+('AR281020000020', 22, 'AR281020000020-22.jpg'),
+
+('AR291020000001', 9, 'AR291020000001-9.JPG'),
+
+('AR291020000002', 8, 'AR291020000002-8.JPG'),
+
+('AR281020000021', 25, 'AR281020000021-25.jpg'),
+
+('AR291020000003', 7, 'AR291020000003-7.JPG'),
+
+('AR281020000022', 34, 'AR281020000022-34.jpg'),
+
+('AR281020000023', 35, 'AR281020000023-35.jpg'),
+
+('AR281020000024', 36, 'AR281020000024-36.jpg'),
+
+('AR281020000025', 37, 'AR281020000025-37.jpg'),
+
+('AR281020000026', 38, 'AR281020000026-38.jpg'),
+
+('AR281020000027', 39, 'AR281020000027-39.jpg'),
+
+('AR021120209031', 33, 'AR021120209031-33.JPG'),
+
+('AR021120000001', 1, 'AR021120000001-1.jpg'),
+
+('AR031120000001', 42, 'AR031120000001-42.JPG'),
+
+('AR031120000001', 14, 'AR031120000001-14.JPG'),
+
+('AR031120000001', 3, 'AR031120000001-3.JPG'),
+
+('AR281120000001', 43, 'AR281120000001-43.jpg'),
+
+('AR111120000001', 44, 'AR111120000001-44.jpg'),
+
+('AR111120000001', 45, 'AR111120000001-45.jpg'),
+
+('AR281020000028', 47, 'AR281020000028-47.jpg'),
+
+('AR281020000028', 48, 'AR281020000028-48.jpg'),
+
+('AR281020000029', 49, 'AR281020000029-49.jpg'),
+
+('AR281020000029', 50, 'AR281020000029-50.jpg'),
+
+('AR281020000029', 51, 'AR281020000029-51.jpg'),
+
+('AR031120000002', 46, 'AR031120000002-46.jpg'),
+
+('AR031120000002', 52, 'AR031120000002-52.jpg'),
+
+('AR031120000002', 53, 'AR031120000002-53.jpg'),
+
+('AR031120000002', 54, 'AR031120000002-54.jpg'),
+
+('AR031120000002', 55, 'AR031120000002-55.jpg'),
+
+('AR031120000002', 56, 'AR031120000002-56.jpg'),
+
+('AR281020000030', 57, 'AR281020000030-57.jpg'),
+
+('AR281020000030', 58, 'AR281020000030-58.jpg'),
+
+('AR281020000030', 59, 'AR281020000030-59.jpg'),
+
+('AR281020000031', 60, 'AR281020000031-60.jpg'),
+
+('AR281020000031', 61, 'AR281020000031-61.jpg'),
+
+('AR281020000031', 62, 'AR281020000031-62.jpg'),
+
+('AR281020000032', 63, 'AR281020000032-63.jpg'),
+
+('AR281020000032', 64, 'AR281020000032-64.jpg'),
+
+('AR281020000032', 65, 'AR281020000032-65.jpg'),
+
+('AR281020000033', 66, 'AR281020000033-66.jpg'),
+
+('AR281020000033', 67, 'AR281020000033-67.jpg'),
+
+('AR281020000033', 68, 'AR281020000033-68.jpg'),
+
+('AR061120000001', 70, 'AR061120000001-70.png'),
+
+('AR061120000002', 69, 'AR061120000002-69.jpg'),
+
+('AR081120000001', 71, 'AR081120000001-71.jpg'),
+
+('AR081120000002', 72, 'AR081120000002-72.jpg'),
+
+('AR081120000003', 73, 'AR081120000003-73.jpg'),
+
+('AR081120000004', 74, 'AR081120000004-74.jpg'),
+
+('AR081120000005', 75, 'AR081120000005-75.jpg'),
+
+('AR101120000001', 76, 'AR101120000001-76.jpg'),
+
+('AR101120000002', 77, 'AR101120000002-77.jpeg'),
+
+('AR101120000003', 78, 'AR101120000003-78.jpeg'),
+
+('AR101120000004', 79, 'AR101120000004-79.jpg'),
+
+('AR101120000005', 71, 'AR101120000005-71.jpg'),
+
+('AR101120000006', 75, 'AR101120000006-75.jpg'),
+
+('AR101120000007', 72, 'AR101120000007-72.jpg'),
+
+('AR101120000008', 80, 'AR101120000008-80.jpeg'),
+
+('AR101120000009', 73, 'AR101120000009-73.jpg'),
+
+('AR101120000010', 74, 'AR101120000010-74.jpg');
+
+-- --------------------------------------------------------
+
+--
+
+-- Table structure for table `tb_office`
+
+--
+
+CREATE TABLE `tb_office` (
+
+  `idkanim` int(11) NOT NULL,
+
+  `kantorName` varchar(125) DEFAULT NULL,
+
+  `kantorAddress` varchar(150) DEFAULT NULL,
+
+  `kantorTelp` char(25) DEFAULT NULL,
+
+  `kantorUrl` varchar(100) DEFAULT NULL,
+
+  `is_central` int(255) NOT NULL DEFAULT 0
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+
+-- Dumping data for table `tb_office`
+
+--
+
+INSERT INTO `tb_office` (`idkanim`, `kantorName`, `kantorAddress`, `kantorTelp`, `kantorUrl`, `is_central`) VALUES
+
+(1, 'Kantor Imigrasi Kelas I TPI Bandung', 'Jl. Surapati No. 82, RT. 09 / RW. 06, Cihaur Geulis, Cibeunying Kaler, Kota Bandung', '022-7278418', 'https://maps.google.com/?q=-6.899095,107.631485&z=4', 0),
+
+(2, 'Kantor Imigrasi Kelas I TPI Cirebon', 'Jl. Sultan Ageng Tirtayasa No. 51, RT/RW 03/04, Kedungdawa, Kedawung, Cirebon', '0231-488282', 'https://maps.google.com/?q=-6.724941,108.521375&z=4\r\n', 0),
+
+(3, 'Kantor Imigrasi Kelas I Non TPI Bogor', 'Jl. A. Yani No.19, RT.03/RW.02, Tanah Sareal, Kec. Tanah Sereal, Kota Bogor', '0251-8338074', 'https://maps.google.com/?q=-6.575019,106.800879&z=4', 0),
+
+(4, 'Kantor Imigrasi Kelas I Non TPI Karawang', 'Jl. Jaksa Agung R. Suprapto, Nagasari, Kec. Karawang Bar., Kabupaten Karawang', '0267-400725', 'https://maps.google.com/?q=-6.301124,107.302880&z=4', 0),
+
+(5, 'Kantor Imigrasi Kelas I Non TPI Bekasi', 'Jl. Perjuangan No.100, RT.002/RW.001, Tlk. Pucung, Kec. Bekasi Utara, Kota Bekasi', '021-88959418', 'https://maps.google.com/?q=-6.219462,107.030420&z=4', 0),
+
+(6, 'Kantor Imigrasi Kelas II Non TPI Sukabumi', 'Jl. Lingkar Selatan No. 7, Baros, Sudajaya Hilir, Baros, Kota Sukabumi', '0266-243900', 'https://maps.google.com/?q=-6.951127,106.926310&z=4\r\n', 0),
+
+(7, 'Kantor Imigrasi Kelas II Non TPI Depok', 'Jalan Boulevard Raya, Komplek Perkantoran Pemda Depok, Grand Depok City, Kalimulya, Cilodong', '021-77820580', 'https://maps.google.com/?q=-6.424052,106.827186&z=4\r\n', 0),
+
+(8, 'Kantor Imigrasi Kelas II Non TPI Tasikmalaya', 'Jl. Letnan Harun, Sukarindik, Bungursari, Tasikmalaya', '0265-346144', 'https://maps.google.com/?q=-7.303117,108.194014&z=4', 0),
+
+(9, 'Kantor Wilayah KEMENKUMHAM Jawa Barat', NULL, NULL, 'https://maps.google.com/?q=-6.914112, 107.638113&z=4', 1);
+
+-- --------------------------------------------------------
+
+--
+
+-- Table structure for table `tb_officecity`
+
+--
+
+CREATE TABLE `tb_officecity` (
+
+  `idcity` int(255) NOT NULL,
+
+  `cityname` varchar(255) NOT NULL,
+
+  `idkanim` int(255) NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+
+-- Dumping data for table `tb_officecity`
+
+--
+
+INSERT INTO `tb_officecity` (`idcity`, `cityname`, `idkanim`) VALUES
+
+(1, 'Kota Bandung', 1),
+
+(2, 'Kabupaten Bandung', 1),
+
+(3, 'Kabupaten Bandung Barat', 1),
+
+(4, 'Kota Cimahi', 1),
+
+(5, 'Kabupaten Sumedang', 1),
+
+(6, 'Kota Cirebon', 2),
+
+(7, 'Kabupaten Cirebon', 2),
+
+(8, 'Kabupaten Kuningan', 2),
+
+(9, 'Kabupaten Majalengka', 2),
+
+(10, 'Kabupaten Indramayu', 2),
+
+(11, 'Kota Bogor', 3),
+
+(12, 'Kabupaten Bogor', 3),
+
+(13, 'Kabupaten Subang', 1),
+
+(14, 'Kabupaten Karawang', 4),
+
+(15, 'Kabupaten Purwakarta', 4),
+
+(16, 'Kota Bekasi', 5),
+
+(17, 'Kabupaten Bekasi', 5),
+
+(18, 'Kota Sukabumi', 6),
+
+(19, 'Kabupaten Sukabuni', 6),
+
+(20, 'Kabupaten Cianjur', 6),
+
+(21, 'Kota Depok', 7),
+
+(22, 'Kota Tasikmalaya', 8),
+
+(23, 'Kabupaten Tasikmalaya', 8),
+
+(24, 'Kabupaten Garut', 8),
+
+(25, 'Kabupaten Ciamis', 8),
+
+(26, 'Kabupaten Banjar', 8),
+
+(27, 'Kabupaten Pangandaran', 8);
+
+-- --------------------------------------------------------
+
+--
+
+-- Table structure for table `tb_profile`
+
+--
+
+CREATE TABLE `tb_profile` (
+
+  `id` int(11) NOT NULL,
+
+  `fullname` varchar(75) NOT NULL,
+
+  `sex` varchar(15) DEFAULT NULL,
+
+  `nationality` varchar(30) DEFAULT NULL,
+
+  `passportno` varchar(15) DEFAULT NULL,
+
+  `placeofissue` varchar(99) DEFAULT NULL,
+
+  `passportexp` date DEFAULT NULL,
+
+  `dateofbirth` date DEFAULT NULL,
+
+  `countryofresidence` varchar(30) DEFAULT NULL,
+
+  `androidhardware` varchar(255) DEFAULT NULL,
+
+  `email` varchar(45) DEFAULT NULL,
+
+  `phonenumber` varchar(30) DEFAULT NULL,
+
+  `address` varchar(255) DEFAULT NULL,
+
+  `userid` int(11) DEFAULT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+
+-- Dumping data for table `tb_profile`
+
+--
+
+INSERT INTO `tb_profile` (`id`, `fullname`, `sex`, `nationality`, `passportno`, `placeofissue`, `passportexp`, `dateofbirth`, `countryofresidence`, `androidhardware`, `email`, `phonenumber`, `address`, `userid`) VALUES
+
+(1, 'Ruth Peres', 'female', 'Ukraine', 'X000000', 'Ukraine', '2025-04-10', '1993-04-10', 'Ukraine', NULL, 'ruth123@gmail.com', '081311122233', 'Santo Street No. 11 Ukraine', 32),
+
+(2, 'Eldon Machedo Quadros', 'male', 'Timor-Leste', '0024882C', 'Timor Leste', '2023-06-04', '1997-06-03', 'Timor-Leste', NULL, 'eldon@gmail.com', '081377766654', 'Christian Street No. 11 Timor Leste', 33),
+
+(3, 'Pang Yik Long', 'male', 'Japan', 'A53974419', 'Malaysia', '2025-04-15', '1985-10-03', 'Japan', NULL, 'pangyiklong@gmail.com', '081311145578', 'Long Street No. 11 Malaysia', 34),
+
+(4, 'Yvonne Rochelle Kristianto', 'female', 'United States', '488863623', 'USA', '2021-11-20', '1987-12-11', 'United States', NULL, 'yvonne@gmail.com', '08132223334', 'Wall Street 11 USA', 35),
+
+(5, 'Wei Song', 'male', 'China', 'E73588504', 'Shanghai', '2027-02-21', '1980-10-30', 'China', NULL, 'weisong@gmail.com', '081355566678', 'Shanghai Street No. 11 China', NULL),
+
+(6, 'Andrea Dian', 'female', 'Albania', 'Au7161816', 'Australia', '2021-04-09', '1955-10-06', 'Albania', NULL, 'dianandrea@gmail.com', '+62772627286', 'None', 36),
+
+(7, 'yosep', 'male', 'Japan', 'T1234', 'Tokyo', '2022-10-22', '1980-10-22', 'Japan', NULL, 'yosep@gmail.com', '123456789', 'Hiroshi no 55', 37),
+
+(8, 'Chen', 'female', 'Iceland', 'I123987', 'Iceland', '2030-02-20', '1985-02-20', 'Iceland', NULL, 'wuhang@gmail.com', '081456789', 'Long Street No. 11 Iceland', 38),
+
+(9, 'Brayden', 'male', 'Iceland', 'I123456', 'Iceland', '2030-03-20', '1985-02-20', 'Iceland', NULL, 'Brayden@gmail.com', '081311111111', 'Long Street No. 11 Iceland', 39),
+
+(10, 'Usman Sadaqat', 'male', 'Pakistan', 'CW5460103', 'Pakistan', '2023-07-17', '1984-08-24', 'Pakistan', NULL, 'usman.sadaqat@gmail.com', '081311122233345', 'Lahore Street No. 11 Pakistan', 40),
+
+(11, 'Chen Yen Shuang', 'female', 'China', '353364277', 'China', '2030-04-14', '1968-02-16', 'China', NULL, 'yen.shuang@gmail.com', '081311144455567', 'Long Street No. 11 Taipei China', 41),
+
+(12, 'Chen Chao', 'female', 'China', '353364280', 'China', '2030-04-14', '1942-08-19', 'China', NULL, 'chen.chao@gmail.com', '081345566778', 'Long Street No. 11 Taipei China', NULL),
+
+(13, 'Sunit Srivastava', 'male', 'India', 'Z4986718', 'India', '2028-04-25', '1973-11-22', 'India', NULL, 'sunit.srivastava@gmail.com', '0811133344456', 'Kanpur Street No. 11 Bombay India', 42),
+
+(14, 'Minsung Kim', 'male', 'Korea, Republic of', 'M43593163', 'Korea', '2025-03-02', '2002-03-15', 'Korea, Republic of', NULL, 'kim.minsung@gmail.com', '081311145578', 'Long Street No. 11 Korea', 43),
+
+(15, 'Test', 'male', 'Afghanistan', 'Test', 'Test', '2020-10-31', '2020-10-01', 'Afghanistan', NULL, 'kangammalida@gmail.com', '088', 'Test', 44),
+
+(16, 'Mohammad Asri Awang', 'male', 'Brunei Darussalam', 'C0521723', 'Ministry Of Home Affairs', '2021-06-08', '1982-08-20', 'Brunei Darussalam', NULL, 'primamaulana33@gmail.com', '0852215111', 'Brunei Darussalam', 45),
+
+(17, 'Mohamad adieb abd rahman', 'male', 'Brunei Darussalam', 'C0372691', 'Ministy of home affair', '2021-09-28', '1988-06-09', 'Brunei Darussalam', NULL, 'mohamadadieb12@gmail.com', '0852215111', 'Brunei', 46),
+
+(18, 'Muhammad azim bin abdul aziz', 'male', 'Brunei Darussalam', 'C0513967', 'Ministy of home affair', '2024-01-23', '1986-09-05', 'Brunei Darussalam', NULL, 'sapto@indonesian-aerospace.com', '0852215111', 'Brunei', 47),
+
+(19, 'Mohamad khairuddin mohamad ali', 'male', 'Brunei Darussalam', 'C0567566', 'Ministy of home affair', '2024-12-19', '1987-10-06', 'Brunei Darussalam', NULL, 'khairuddin.ali@mindef.gov.bn', '0852215111', 'Brunei', 48),
+
+(20, 'Md zulfri marali', 'male', 'Brunei Darussalam', 'C0572098', 'Ministy of home affair', '2025-01-01', '1977-07-14', 'Brunei Darussalam', NULL, 'vespaku3344@gmail.com', '0852215111', 'Brunei', 49),
+
+(21, 'Mohamad jamil bin simpai', 'male', 'Brunei Darussalam', 'C0465411', 'Ministy of home affair', '2023-03-18', '1978-10-29', 'Brunei Darussalam', NULL, 'mohd75jamil@gmail.com', '0852215111', 'Brunei', 50),
+
+(22, 'Haji hairul azmi bin haji omar', 'male', 'Brunei Darussalam', 'C0421380', 'Ministy of home affair', '2022-08-09', '1980-03-24', 'Brunei Darussalam', NULL, 'azmigrul@gmail.com', '0852215111', 'Brunei', 51),
+
+(23, 'Mohamad erwan mohamed', 'male', 'Brunei Darussalam', 'C0578700', 'Ministy of home affair', '2025-09-23', '1981-03-28', 'Brunei Darussalam', NULL, 'mohamaderwan@hotmail.com', '0852215111', 'Brunei', 52),
+
+(24, 'Mohamad hazwan husny', 'male', 'Brunei Darussalam', 'C0362472', 'Ministy of home affair', '2021-08-20', '1990-11-02', 'Brunei Darussalam', NULL, 'hazwan.husny@mindef.gov.bn', '0852215111', 'Brunei', 53),
+
+(25, 'Mohammad handry ilmi', 'male', 'Brunei Darussalam', 'C0452557', 'Ministy of home affair', '2023-01-29', '1973-10-03', 'Brunei Darussalam', NULL, 'hendry.ilmi@mindef.gov.bn', '0852215111', 'Brunei', 54),
+
+(26, 'Zul Amali Mohammad', 'male', 'Brunei Darussalam', 'C0408665', 'Ministry of home affairs', '2022-04-26', '1980-02-10', 'Brunei Darussalam', NULL, 'Hizul.hz@gmail.com', '0852215111', 'Brunei', 55),
+
+(27, 'Noor afifi islah hj noor', 'male', 'Brunei Darussalam', 'C0514640', 'Ministy of home affair', '2024-01-28', '1983-08-16', 'Brunei Darussalam', NULL, 'hj.afifi16@gmail.com', '0852215111', 'Brunei', 56),
+
+(28, 'Pg azari bin pg hj damit', 'male', 'Brunei Darussalam', 'C0578499', 'Ministy of home affair', '2025-09-02', '1982-08-20', 'Brunei Darussalam', NULL, 'azari_phd@yahoo.com', '0852215111', 'Brunei', 57),
+
+(29, 'Muhammad azim bin abd aziz', 'male', 'Brunei Darussalam', 'C0513967', 'Ministy of home affair', '2024-01-23', '1986-09-05', 'Brunei Darussalam', NULL, 'azim5986@gmail.com', '0852215111', 'Brunei', 58),
+
+(30, 'Ak mohd zulazmi pg hj zulkifly', 'male', 'Brunei Darussalam', 'C0540041', 'Ministy of home affair', '2024-07-29', '1986-08-23', 'Brunei Darussalam', NULL, 'zulaz23@hotmail.com', '0852215111', 'Brunei', 59),
+
+(31, 'Mohammad asri awang', 'male', 'Brunei Darussalam', 'C0521723', 'Ministy of home affair', '2021-06-08', '1982-08-20', 'Brunei Darussalam', NULL, 'asri.hjawang@gmail.com', '0852215111', 'Brunei', 60),
+
+(32, 'Zul amali mohammAd', 'male', 'Brunei Darussalam', 'C0408665', 'Ministy of home affair', '2022-04-26', '1980-02-10', 'Brunei Darussalam', NULL, 'hjzul.hz@gmail.com', '0852215111', 'Brunei', 61),
+
+(33, 'Patimban Port Services', 'male', 'Cambodia', 'K123456', 'Kamboja', '2030-02-20', '1985-02-20', 'Cambodia', NULL, 'pat-portcervices@benline.co.id', '081311145578', 'Long Street Kamboja', 62),
+
+(34, 'He Fang', 'male', 'China', 'E90089410', 'MPS Exit & Entry Administration', '2026-11-21', '1974-11-12', 'China', NULL, 'hefang@mvxiangruikou.dummy', '081285593974', 'prc', 63),
+
+(35, 'Ji Xingqiang', 'male', 'China', 'E86305956', 'Guangdong', '2026-09-05', '1984-08-14', 'China', NULL, 'jixingqiang@mvxiangruikou.dummy', '+6281285593974', 'PRC', 64),
+
+(36, 'Ge Shuhong', 'male', 'China', 'E88240585', 'Henan', '2026-10-13', '1995-07-25', 'China', NULL, 'hobiyou@mvxiangruikou.dummy', '+6281285593974', 'PRC', 65),
+
+(37, 'Zhang Tingdong', 'male', 'China', 'EC9895215', 'Guangdong', '2028-04-15', '1985-02-03', 'China', NULL, 'zhangtingdong@mvxiangruikou.dummy', '+6281285593974', 'PRC', 66),
+
+(38, 'Song Xinyang', 'male', 'China', 'EJ2613819', 'Henan', '2030-06-14', '1986-10-12', 'China', NULL, 'songxinyang@mvxiangruikou.dummy', '+6281285593974', 'PRC', 67),
+
+(39, 'Hou Biyou', 'male', 'China', 'EH9354607', 'Sichuan', '2029-12-22', '1965-10-03', 'China', NULL, 'geshuhong@mvxiangruikou.dummy', '+6281285593974', 'PRC', 68),
+
+(42, 'Kosuke Ogawa', 'male', 'Japan', 'TR9182301', 'Japan', '2027-09-20', '1976-03-31', 'Japan', NULL, 'kosuke.ogawa@gmail.com', '081311145578', 'Long Street No. 11 Japan', 77),
+
+(43, 'Hu Yinlei', 'male', 'China', 'E06921734', 'Hubei', '2024-02-25', '1988-02-26', 'China', NULL, 'suyuanxin@mvxiangruikou.dummy', '+6281285593974', 'PRC', 78),
+
+(44, 'Dummytest', 'male', 'AndorrA', 'AS27266', 'Libya', '2021-06-18', '1985-11-06', 'AndorrA', NULL, 'dummytest@gmail.com', '08273562726', 'Nowhere', 79),
+
+(45, 'Ariana grande', 'female', 'Angola', 'X27252826', 'Arab', '2020-11-26', '2013-11-21', 'Angola', NULL, 'none@gmail.com', '01826266363', 'Nowhere2', NULL),
+
+(46, 'Nopember Ceria', 'female', 'Germany', 'NOP01', 'Germany', '2030-02-20', '2002-11-28', 'Germany', NULL, 'nopember@gmail.com', '081311145578', 'Long Street No. 11 Germany', 80),
+
+(47, 'Cai Haijun', 'male', 'China', 'EJ1976093', 'Shaanxi', '2030-03-09', '1985-01-27', 'China', NULL, 'caihaijun@mvxiangruikou.dummy', '+6281285593974', 'PRC', 81),
+
+(48, 'Su Yuanxin', 'male', 'China', 'EJ3923938', 'Guangdong', '2030-06-18', '1974-06-21', 'China', NULL, 'suhaijun@mvxiangruikou.dummy', '+6281285593974', 'PRC', NULL),
+
+(49, 'Liu Guohoa', 'male', 'China', 'E87397915', 'Jiangxi', '2026-12-19', '1987-12-27', 'China', NULL, 'liuguohoa@mvxiangruikou.dummy', '+6281285593974', 'PRC', 82),
+
+(50, 'He Yuefeng', 'male', 'China', 'EJ2823449', 'Hunan', '2030-06-11', '1984-05-14', 'China', NULL, 'heguohoa@mvxiangruikou.dummy', '+6281285593974', 'PRC', NULL),
+
+(51, 'Chi Liangbing', 'male', 'China', 'EA5482353', 'Jiangsu', '2027-06-21', '1980-05-07', 'China', NULL, 'chiguohoa@mvxiangruikou.dummy', '+6281285593974', 'PRC', NULL),
+
+(52, 'Nopember Suka', 'female', 'Germany', 'NOP02', 'Germany', '2030-02-20', '2002-02-20', 'Germany', NULL, 'nopember02@gmail.com', '081311145578', 'Long Street No. 11 Germany', NULL),
+
+(53, 'Nopember Sukacita', 'female', 'Germany', 'NOP03', 'Germany', '2030-02-20', '2002-02-20', 'Germany', NULL, 'nopember03@gmail.com', '081311145578', 'Long Street No. 11 Germany', NULL),
+
+(54, 'Nopember Happy', 'female', 'Germany', 'NOP04', 'Germany', '2030-02-20', '2002-02-20', 'Germany', NULL, 'nopember04@gmail.com', '081311145578', 'Long Street No. 11 Germany', NULL),
+
+(55, 'Nopember Joy', 'female', 'Germany', 'NOP05', 'Germany', '2030-02-20', '2002-02-20', 'Germany', NULL, 'nopember05@gmail.com', '081311145578', 'Long Street No. 11 Germany', NULL),
+
+(56, 'Nopember Syukur', 'female', 'Germany', 'NOP06', 'Germany', '2030-02-20', '2002-02-20', 'Germany', NULL, 'nopember06@gmail.com', '081311145578', 'Long Street No. 11 Germany', NULL),
+
+(57, 'Huang Weihao', 'male', 'China', 'E02988807', 'Guangdong', '2022-07-31', '1990-09-03', 'China', NULL, 'huangweihao@mvxiangruikou.dummy', '+6281285593974', 'PRC', 83),
+
+(58, 'Zha Hujin', 'male', 'China', 'E14922825', 'Anhui', '2023-04-14', '1990-03-25', 'China', NULL, 'zhaweihao@mvxiangruikou.dummy', '+6281285593974', 'PRC', NULL),
+
+(59, 'Zhong Wendong', 'male', 'China', 'EJ3922797', 'Guangdong', '2030-06-11', '1968-09-22', 'China', NULL, 'zhongweihao@mvxiangruikou.dummy', '+6281285593974', 'PRC', NULL),
+
+(60, 'Jiang Mingkang', 'male', 'China', 'E62895237', 'Guangdong', '2025-11-09', '1997-04-22', 'China', NULL, 'jiangmingkang@mvxiangruikou.dummy', '+6281285593974', 'PRC', 84),
+
+(61, 'Xu Yingzhe', 'male', 'China', 'EE8185624', 'Henan', '2028-12-03', '1992-01-10', 'China', NULL, 'xumingkang@mvxiangruikou.dummy', '+6281285593974', 'PRC', NULL),
+
+(62, 'Wang Wei', 'male', 'China', 'EJ1579825', 'Shandong', '2030-06-21', '1986-01-27', 'China', NULL, 'wangmingkang@mvxiangruikou.dummy', '+6281285593974', 'PRC', NULL),
+
+(63, 'Lu Zhongcun', 'male', 'China', 'EJ3966685', 'Zhejiang', '2030-06-01', '1984-05-05', 'China', NULL, 'luzhongcun@mvxiangruikou.dummy', '+6281285593974', 'PRC', 85),
+
+(64, 'Li Xiang', 'male', 'China', 'EA1395350', 'Hunan', '2027-05-08', '1987-01-12', 'China', NULL, 'lizhongcun@mvxiangruikou.dummy', '+6281285593974', 'PRC', NULL),
+
+(65, 'Cai Jisheng', 'male', 'China', 'E75801934', 'Shandong', '2026-05-31', '1984-06-03', 'China', NULL, 'caizhongcun@mvxiangruikou.dummy', '+6281285593974', 'PRC', NULL),
+
+(66, 'Yi Yao', 'male', 'China', 'E98310176', 'Hunan', '2027-03-21', '1987-04-13', 'China', NULL, 'yiyao@mvxiangruikou.dummy', '+6281285593974', 'PRC', 86),
+
+(67, 'Qiu Rongjun', 'male', 'China', 'EJ1669906', 'Fujian', '2030-01-21', '1997-11-08', 'China', NULL, 'qiuyao@mvxiangruikou.dummy', '+6281285593974', 'PRC', NULL),
+
+(68, 'Shen Tianxiang', 'male', 'China', 'EF1021454', 'Hunan', '2029-01-16', '2000-02-14', 'China', NULL, 'shenyao@mvxiangruikou.dummy', '+6281285593974', 'PRC', NULL),
+
+(69, 'Lee Jinho', 'male', 'Korea, Republic of', 'M09796140', 'Seoul', '2028-03-19', '1969-02-05', 'Korea, Republic of', NULL, 'leejinho@gmail.com', '+5386748442578', 'Gildong Hong Bldg. 102 Unit 304 Sajik-ro-3-gil 23 Jongno-gu, Seoul 30174 (South Korea)', 89),
+
+(70, 'Arfa yudha indriawan', 'male', 'Indonesia', 'Test1234', 'Jogja', '2025-11-06', '1981-11-06', 'Indonesia', NULL, 'ingalogo@gmail.com', 'Test', 'Indonesua', 90),
+
+(71, 'Nolan Anders Bader', 'male', 'United States', '821908312', 'US', '2023-01-23', '1992-05-17', 'United States', NULL, 'teguhgege@gmail.com', '0', 'Us', 91),
+
+(72, 'Brian charles lydy', 'male', 'United States', '822228630', 'US', '2025-06-08', '1986-10-02', 'United States', NULL, 'iwankw2014@gmail.com', '0821', 'US', 92),
+
+(73, 'Devin audrey', 'male', 'United States', '822002921', 'Us', '2023-09-18', '1992-11-27', 'United States', NULL, 'devin@gmail.com', '08', 'Us', 93),
+
+(74, 'Cody Cross Mowry', 'male', 'United States', '822014876', 'US', '2023-10-24', '1989-05-21', 'United States', NULL, 'cody@gmail.com', '0821', 'US', 94),
+
+(75, 'Johnny', 'male', 'United States', '821917940', 'Us', '2023-03-06', '1983-05-24', 'United States', NULL, 'johnny@gmail.com', '+6282120179178', 'Us', 95),
+
+(76, 'Sunit Srivastava2', 'male', 'India', 'Z49867182', 'India', '2028-04-25', '1973-11-22', 'India', NULL, 'sunit2.srivastava@gmail.com', '081311145578', 'Kanpur Street No. 11 Bombay', 96),
+
+(77, 'Sunit Srivastava3', 'male', 'India', 'Z49867183', 'India', '2028-04-24', '1973-11-22', 'India', NULL, 'sunit3.srivastava@gmail.com', '081311145578', 'Kanpur Street No. 11 Bombay', 97),
+
+(78, 'Sunit Srivastava4', 'male', 'India', 'Z49867184', 'India', '2028-04-25', '1973-11-22', 'India', NULL, 'sunit4.srivastava@gmail.com', '081311145578', 'Kanpur Street No. 11 Bombay', 98),
+
+(79, 'Maryam Jameelah binti ab jalal bekri', 'female', 'Malaysia', 'A502200080', 'Jakarta', '2023-07-26', '1989-03-25', 'Malaysia', NULL, 'maryamjameelah89@gmail.com', '085362425422', 'Geylang', 99),
+
+(80, 'Michael', 'male', 'United States', '821908312', 'Us', '2023-01-23', '1992-05-17', 'United States', NULL, 'armacdbdo@gmail.com', '081389005229', 'Us', 100);
+
+-- --------------------------------------------------------
+
+--
+
+-- Table structure for table `user`
+
+--
+
+CREATE TABLE `user` (
+
+  `id` int(11) NOT NULL,
+
+  `name` varchar(128) NOT NULL,
+
+  `email` varchar(128) NOT NULL,
+
+  `username` varchar(25) NOT NULL,
+
+  `image` varchar(128) NOT NULL,
+
+  `password` varchar(255) NOT NULL,
+
+  `role_id` int(11) NOT NULL,
+
+  `is_active` tinyint(1) NOT NULL,
+
+  `date_created` int(11) NOT NULL,
+
+  `idkanim` int(11) DEFAULT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+
+-- Dumping data for table `user`
+
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `username`, `image`, `password`, `role_id`, `is_active`, `date_created`, `idkanim`) VALUES
+
+(14, 'Admin Pusat', 'admin.pusat@kemenkumham.go.id', 'admin.pusat', 'default.jpg', '$2y$10$WrIMq.U3FfPxxpgaRzpDo.aDKYrd8bPMm/xFTtdmsZFKVWi7n4XXS', 1, 1, 1602691840, 9),
+
+(15, 'Gieta Rahayu Pimandari', 'kanim_bandung@imigrasi.go.id', 'admin.bandung', 'default.jpg', '$2y$10$wzYQSdguW1BV99HxUASoYOTyWDYX/Dw93AmXjAtq8e4GN2Y39og7m', 2, 1, 1602691874, 1),
+
+(16, 'Alfin Maulana', 'kanim_cirebon@imigrasi.go.id', 'admin.cirebon', 'default.jpg', '$2y$10$VT1DGVoRm/ygNWngatKfUOX0NzL63WaafQwXRfT1xWrWzEb3/H5e2', 2, 1, 1602691913, 2),
+
+(26, 'Deden Yogi Noviansya', 'deden.yogi@gmail.com', 'admin.bogor', 'default.jpg', '$2y$10$NRm2kvZDcMU3YU/2Hm29y.EQ3fPQM/XCGU/SbyhYbV0bEm77v/5PC', 2, 1, 1603259711, 3),
+
+(27, 'Adi Heryadi', 'adi.heryadi@gmail.com', 'admin.sukabumi', 'default.jpg', '$2y$10$AlNKcRH5Kli/GdhprCpl.uH1IHfMK7ja/6NvVWNrhbtxCXESmEfy6', 2, 1, 1603259771, 6),
+
+(28, 'Tri Mega Budiman', 'tri.budiman@gmail.com', 'admin.tasik', 'default.jpg', '$2y$10$.rKDG0h5keKNqxtibkKtyeKzTNUuClUCgBbzHDmE2CiYUaA.75jVO', 2, 1, 1603259808, 8),
+
+(29, 'Tris Peres Lolon', 'trisperes@gmail.com', 'admin.bekasi', 'default.jpg', '$2y$10$fHTzvZEhhdbK7SAg6NWIkefnseG/HjHMQL0HAsu0G1OQ7k5ZC9ygO', 2, 1, 1603259847, 5),
+
+(30, 'Indrias Natanael', 'indrias@gmail.com', 'admin.depok', 'default.jpg', '$2y$10$9oKyaQT0wf4MKw8tkN1X2.zIA.2wshhI9rxfJ3inBXBClqcA4HWzS', 2, 1, 1603259887, 7),
+
+(31, 'Hadi Firmansyah', 'hadifirmansyah@gmail.com', 'admin.karawang', 'default.jpg', '$2y$10$P0X58Dt.7MgnoJvhUEiuyeNKYniOgBekNiBf9V7g86Q5tnkdFSelm', 2, 1, 1603259939, 4),
+
+(32, 'Ruth Peres', 'ruth123@gmail.com', 'ruth123', 'deafult.jpg', '$2y$10$9iH0ttiUvh7aR4w8Beoy9O9uiEIsG.oNEXQGq6/Jmdp8jmeYTGhfy', 3, 1, 1603263988, NULL),
+
+(33, 'Eldon Machedo Quadros', 'eldon@gmail.com', 'eldon123', 'deafult.jpg', '$2y$10$Jrf459fDuECnDenLlKxhROCi2a8R3aBCRbhzjsLC3WuBDl/jQy4uq', 3, 1, 1603265420, NULL),
+
+(34, 'Pang Yik Long', 'pangyiklong@gmail.com', 'pang123', 'deafult.jpg', '$2y$10$Mr1T.AAsJzMaVn8Si7ym.e0mM3GowrRERegs5wZy8WOH7QHFZHMaW', 3, 1, 1603267331, NULL),
+
+(35, 'Yvonne Rochelle Kristianto', 'yvonne@gmail.com', 'yvonne', 'deafult.jpg', '$2y$10$YEcExnxfzWIOZXkr8sMk7.lkniBVgwlOIEU6.YC6xf0EORclhWxU.', 3, 1, 1603268436, NULL),
+
+(36, 'Andrea Dian', 'dianandrea@gmail.com', 'andreadian89', 'deafult.jpg', '$2y$10$k47qETFeYDEaj1iBBe1L/u7sjK3KzBz2MtkK09zLDybzwh8e90B4S', 3, 1, 1603281396, NULL),
+
+(37, 'yosep', 'yosep@gmail.com', 'yosep', 'deafult.jpg', '$2y$10$Od2B7Dfg24knZNGZYv4SYeFd2OBvCKswMewaTZrnKDDRAS5W5FmKq', 3, 1, 1603331880, NULL),
+
+(38, 'Chen', 'wuhang@gmail.com', 'Wuhang', 'deafult.jpg', '$2y$10$0APBQHugQDc5qZvqtiTGEO/dcYeeCJDzEttkISksEibS0mV5f9122', 3, 1, 1603354995, NULL),
+
+(39, 'Brayden', 'Brayden@gmail.com', 'Kevin', 'deafult.jpg', '$2y$10$w0riiG50ld9aUvQIFBrVfePJ7e6bBXscDh.dT.M4RJnETh78NunJm', 3, 1, 1603424290, NULL),
+
+(40, 'Usman Sadaqat', 'usman.sadaqat@gmail.com', 'usman123', 'deafult.jpg', '$2y$10$wncsbBFrjBhLI05S5e20YenfI3Ex7KOG3zv2rdsKUdTlf9TKNUynm', 3, 1, 1603698851, NULL),
+
+(41, 'Chen Yen Shuang', 'yen.shuang@gmail.com', 'chen123', 'deafult.jpg', '$2y$10$oIVo23y8JqxN2heMlSlDpuz/9Fmv9t46aOOnCAgKd5WfwQK7MD3Te', 3, 1, 1603700060, NULL),
+
+(42, 'Sunit Srivastava', 'sunit.srivastava@gmail.com', 'sunit123', 'deafult.jpg', '$2y$10$LXx2pH17m2ptTkHOoIaBHOArHHNGiFqVgwMT38cSGjpQuGd7HvJS.', 3, 1, 1603704158, NULL),
+
+(43, 'Kim Minsung', 'kim.minsung@gmail.com', 'kim123', 'deafult.jpg', '$2y$10$7u6BzHB3MQ3jbodjjQG4k.dYHnXfsiaSamNtRZAGKcSFJ0kt05bHq', 3, 1, 1603774234, NULL),
+
+(44, 'Aam Ammalida', 'kangammalida@gmail.com', 'ammalida36', 'deafult.jpg', '$2y$10$FKEJ69by2RenJin1jmXB0OqwuDwJWi4G4/W7A2ArYifnS5t9XKuSO', 3, 1, 1603788015, NULL),
+
+(45, 'Prima maulana', 'primamaulana33@gmail.com', 'Prima', 'deafult.jpg', '$2y$10$Vv.5jQ1wn2K0CpRh1288yuAMgjm99CiruLykWEteOSkQhorNp5rdG', 3, 1, 1603856372, NULL),
+
+(46, 'Mohamad adieb abd rahman', 'mohamadadieb12@gmail.com', 'Adieb', 'deafult.jpg', '$2y$10$KYvY/rQdqvshflZHXDFLaOSpouT6c4CKAK/Q0xDXj61PmrHnlYVCK', 3, 1, 1603856506, NULL),
+
+(47, 'Sapto', 'sapto@indonesian-aerospace.com', 'Sapto', 'deafult.jpg', '$2y$10$0me0m6S1nT3j1a/Kl94iuOmJcMqk3JZANESPGCroawEeJTyimiZ6G', 3, 1, 1603857086, NULL),
+
+(48, 'Mohamad khairuddin mohamad ali', 'khairuddin.ali@mindef.gov.bn', 'Khairuddin', 'deafult.jpg', '$2y$10$b2os./mvBWqQlgCqY3ULnuVx/sGKZn9gMvf.aZFwHwbb8K0urZagO', 3, 1, 1603862686, NULL),
+
+(49, 'Md zulfri marali', 'vespaku3344@gmail.com', 'Zulfrizal', 'deafult.jpg', '$2y$10$xqjxGEW/PvG/iX26O9VB0eoaJOo3Bd28ZHjCij9ofN6tyTDfIcyVG', 3, 1, 1603863298, NULL),
+
+(50, 'Mohamad jamil bin simpai', 'mohd75jamil@gmail.com', 'Jamil', 'deafult.jpg', '$2y$10$Ixxw0MayjmAwKtE1WP4iDu5lPFt03TVnun0qNEq1OpfZI9e2gcWUa', 3, 1, 1603864268, NULL),
+
+(51, 'Haji hairul azmi bin haji omar', 'azmigrul@gmail.com', 'Hairul', 'deafult.jpg', '$2y$10$4hcnmIaqbP4PaUE.SGzPGeg2mI2rRPYvCxDWpshFikDe.KgKIfmV6', 3, 1, 1603865706, NULL),
+
+(52, 'Mohamad erwan mohamed', 'mohamaderwan@hotmail.com', 'Erwan', 'deafult.jpg', '$2y$10$ezmsJK1BsZV8jzO83/8xwuZhWsWcznUm1PVcTx2JQu4WFXWtKinnO', 3, 1, 1603866025, NULL),
+
+(53, 'Mohamad hazwan husny', 'hazwan.husny@mindef.gov.bn', 'Hazwan', 'deafult.jpg', '$2y$10$yonTwK4suPWvCCxMpcAJROI0eHAidEQvvgoeHQ6L6pXQ3kzGOD4YG', 3, 1, 1603866688, NULL),
+
+(54, 'Mohammad handry ilmi', 'hendry.ilmi@mindef.gov.bn', 'Handry', 'deafult.jpg', '$2y$10$S.scNCwsO1Y5xvNXWlco2OOIGtyfZyBOnUaHAKIXHtSyLYsvyRfhW', 3, 1, 1603869635, NULL),
+
+(55, 'Zul Amali Mohammad', 'Hizul.hz@gmail.com', 'Zul', 'deafult.jpg', '$2y$10$tng4V3bfmAbIgDgoqllJFenu63j/odQI9yn9UgNj50qG1HYJOidL.', 3, 1, 1603870116, NULL),
+
+(56, 'Noor afifi islah hj noor', 'hj.afifi16@gmail.com', 'Afifi', 'deafult.jpg', '$2y$10$1bzZVb5tYR8T03xeP0tUiOCrrlWIqvXoWydXA7HTHkATqYk63D8VG', 3, 1, 1603870178, NULL),
+
+(57, 'Pg azari bin pg hj damit', 'azari_phd@yahoo.com', 'Azari', 'deafult.jpg', '$2y$10$uMAPwTqlVD8kvX455oKSTeg.YfdN7xJ8I1.KuU04AAWGOCbEL.tCK', 3, 1, 1603871022, NULL),
+
+(58, 'Muhammad azim bin abd aziz', 'azim5986@gmail.com', 'Azim', 'deafult.jpg', '$2y$10$KuZYlrgOyH1BUAMfVRVea.89ovPdSxcMvyr0ZbCpzatfyOPnjsSja', 3, 1, 1603871152, NULL),
+
+(59, 'Ak mohd zulazmi pg hj zulkifly', 'zulaz23@hotmail.com', 'Zulazmi', 'deafult.jpg', '$2y$10$XWdugW/SkYNjZE8be6Q.5u1K8K1t28uaecCqBUsRkBLxkD/Uqkram', 3, 1, 1603871564, NULL),
+
+(60, 'Mohammad asri awang', 'asri.hjawang@gmail.com', 'Asri', 'deafult.jpg', '$2y$10$uqpijiHXTRSGYwOjDMIiqOEnQfHZOuOCsbBCXlVu3mwubRtfWP0FO', 3, 1, 1603873272, NULL),
+
+(61, 'Zul amali mohammAd', 'hjzul.hz@gmail.com', 'Amali', 'deafult.jpg', '$2y$10$E.VfooK91S/RlY9yCqSE1uH4Lzi2z4Xhkl/1jy3Qq2NF313G.Q/sa', 3, 1, 1603877469, NULL),
+
+(62, 'Patimban Port Services', 'pat-portcervices@benline.co.id', 'patportpat', 'deafult.jpg', '$2y$10$DHvYAQv02urwShpwhEpfxewF1AZHNHOToP.9lNiZ7n5akr.781LzK', 3, 1, 1603925757, NULL),
+
+(63, 'He Fang', 'hefang@mvxiangruikou.dummy', 'hefang', 'deafult.jpg', '$2y$10$JI3xLwdY5C9OKzNjXGeOQuPAnQWjLM.ixwD6dKvLlGqiOP7udyMQy', 3, 1, 1603953056, NULL),
+
+(64, 'Ji Xingqiang', 'jixingqiang@mvxiangruikou.dummy', 'jixingqiang', 'deafult.jpg', '$2y$10$jyEtEeoxOU74StmGF7xn1OFp0Fupw.wJgPOkFxwuHb4D.XMKczvfq', 3, 1, 1603959718, NULL),
+
+(65, 'Ho Biyou', 'hobiyou@mvxiangruikou.dummy', 'hobiyou', 'deafult.jpg', '$2y$10$7jHDrLIsI6JFoEueYjNDkeo/686SMQjXMfpZg/pI6sTw9G5KZWiRm', 3, 1, 1603959954, NULL),
+
+(66, 'Zhang Tingdong', 'zhangtingdong@mvxiangruikou.dummy', 'zhangtingdong', 'deafult.jpg', '$2y$10$3gGkA0zu5WJ5WUJ2Pk3XfOB41R1Z2SXci5bWeweMxNrZOXcSA4Q1a', 3, 1, 1603960641, NULL),
+
+(67, 'Song Xinyang', 'songxinyang@mvxiangruikou.dummy', 'songxinyang', 'deafult.jpg', '$2y$10$c.CwfmMY4sLB.5gieuWUUePS/PxaNfU9F8SXkQqf985OZt6ys.DXS', 3, 1, 1603960894, NULL),
+
+(68, 'Ge Shuhong', 'geshuhong@mvxiangruikou.dummy', 'geshuhong', 'deafult.jpg', '$2y$10$DW14CcIjbY.3ZmuyZEpKzOsPBceItIqDvHWL9tGXL7QmsuVU7DsGO', 3, 1, 1603961028, NULL),
+
+(77, 'Kosuke Ogawa', 'kosuke.ogawa@gmail.com', 'kosuke123', 'deafult.jpg', '$2y$10$qFRjyRFK7ghHL3xc6.b6YOse8x97mTpl894SRj0h.61JWDxzCH7Mq', 3, 1, 1604363140, NULL),
+
+(78, 'Su Yuanxin', 'suyuanxin@mvxiangruikou.dummy', 'suyuanxin', 'deafult.jpg', '$2y$10$OYxWAk9ipZsNzjgjyPXVdOb5bd1FwNvxtpcvUfWTEISBshJGqPPO2', 3, 1, 1604368841, NULL),
+
+(79, 'Dummytest', 'dummytest@gmail.com', 'Dummytest1', 'deafult.jpg', '$2y$10$rc06X19SUJt8GQHL9m6X4eJEK8teyirLA4bXqkqGvIdrMaEO.7Hbu', 3, 1, 1604370799, NULL),
+
+(80, 'Nopember Ceria', 'nopember@gmail.com', 'nop123', 'deafult.jpg', '$2y$10$sj5T3ygAZprENsk5Cq0gs.1l8.GCd5PqYg5Z1xSDMuG/HOFv66TY.', 3, 1, 1604371100, NULL),
+
+(81, 'Cai Haijun', 'caihaijun@mvxiangruikou.dummy', 'caihaijun', 'deafult.jpg', '$2y$10$xwfSDOptQmH/oLlNoJfVHeUXJqHuI8EoEMKtuWCIlJJ2oQQZ4N/Fy', 3, 1, 1604371695, NULL),
+
+(82, 'Liu Guohoa', 'liuguohoa@mvxiangruikou.dummy', 'liuguohoa', 'deafult.jpg', '$2y$10$OsrxjO2vDC.0UoScexKTyu/xipl5d9aUVMzfVQ.6n6kRUWCA9O70O', 3, 1, 1604372297, NULL),
+
+(83, 'Huang Weihao', 'huangweihao@mvxiangruikou.dummy', 'huangweihao', 'deafult.jpg', '$2y$10$kVpLDKHkv1hursyGVpZr3OypzZXXz2cRzuq.n8N3D5vnP6C1ixKuu', 3, 1, 1604378016, NULL),
+
+(84, 'Jiang Mingkang', 'jiangmingkang@mvxiangruikou.dummy', 'jiangmingkang', 'deafult.jpg', '$2y$10$OqOyYdJtLMnZ0rHWrhRAxuAFSabQhPjc6W5nnBGRlRXWHuZKIkfEy', 3, 1, 1604378419, NULL),
+
+(85, 'Lu Zhongcun', 'luzhongcun@mvxiangruikou.dummy', 'luzhongcun', 'deafult.jpg', '$2y$10$CAN93lZsG8dtuiGaKiSLGuq9qdUtLTn.hJioGQbOPwaw4Dd0QNeWO', 3, 1, 1604378684, NULL),
+
+(86, 'Yi Yao', 'yiyao@mvxiangruikou.dummy', 'yiyao', 'deafult.jpg', '$2y$10$ZNjHcgE8P8YKbDYOR8UXFOMn8UULBg2QTyRQXtbnHNOTknu2QSv7.', 3, 1, 1604378947, NULL),
+
+(87, 'Kasubsi Pemeriksa Kanim Kelas I TPI Cirebon', 'kasubsiriksacirebon@imigrasi.go.id', 'tpi.kertajati', 'default.jpg', '$2y$10$cNFGH65nHXZGHh8Wa09g6uBM8OPSgOCCxGtgILTqdrrNJt2m5wQt.', 2, 1, 1604646832, 2),
+
+(88, 'Kasubsi Pemeriksa Kanim Kelas I TPI Bandung', 'kasubsiriksabandung@imigrasi.go.id', 'tpi.huseinsastranegara', 'default.jpg', '$2y$10$LX0O95dLEjHxsGlD4/GBouCP.FBZ9umcVckqNBKKn3P4h937ty8OG', 2, 1, 1604646917, 1),
+
+(89, 'Lee Jinho', 'leejinho@gmail.com', 'Leejinho69', 'deafult.jpg', '$2y$10$quTn2usnzgxQsC9XubP18u/s9ax1IRGYGJT67isb2CsNMaReqTINS', 3, 1, 1604651108, NULL),
+
+(90, 'Arfa yudha indriawan', 'ingalogo@gmail.com', 'Sutowijoyo9', 'deafult.jpg', '$2y$10$GRp16.KDpxV3ySu6ylcLseSfj/DU5a/s9M6evRpDNRnZn.sY5ppzK', 3, 1, 1604651198, NULL),
+
+(91, 'Nolan Anders Bader', 'teguhgege@gmail.com', 'Nolan', 'deafult.jpg', '$2y$10$lEyRW5AEj8uZoMg4SQ9vdOiRWG1osZXQNN3mSwrH4c6xF567/CEkq', 3, 1, 1604834430, NULL),
+
+(92, 'Brian charles lydy', 'iwankw2014@gmail.com', 'Brian', 'deafult.jpg', '$2y$10$fYTvINjskVGc1RMbZnnhquRusDOQrL9pcvTAgKMrJFv5Asa8uDZ4C', 3, 1, 1604836448, NULL),
+
+(93, 'Devin audrey', 'devin@gmail.com', 'Devin', 'deafult.jpg', '$2y$10$.DsFORtOhL9IkrhiYms9mO7kgE994Z5vxQOa2IS5lQ8co.52.DhY.', 3, 1, 1604836868, NULL),
+
+(94, 'Cody Cross Mowry', 'cody@gmail.com', 'Cody', 'deafult.jpg', '$2y$10$sPwxj/y7lSGrrgA5sygqau0TDe8HUMGeTB4eCz7sC6ahgJLX4YjRi', 3, 1, 1604837090, NULL),
+
+(95, 'Johnny', 'johnny@gmail.com', 'Johnny', 'deafult.jpg', '$2y$10$vFA6XsdDE/INXDdP5RcE9e3Nf4cQsqwMbnotnwTE6C3/Y0gZgKSyS', 3, 1, 1604837152, NULL),
+
+(96, 'Sunit Srivastava2', 'sunit2.srivastava@gmail.com', 'sunit1234', 'deafult.jpg', '$2y$10$3C5.3N/8eDsPdDYZmHXY2OcIOkQmDYLz6EiSmCgzW3KpZxDu.6/ri', 3, 1, 1604896654, NULL),
+
+(97, 'Sunit Srivastava3', 'sunit3.srivastava@gmail.com', 'sunit12345', 'deafult.jpg', '$2y$10$gZoSbGN0GRrr2GWmYzY5FeUoheKoCVy.i4/wdUDkuafQ2ZR05fWPG', 3, 1, 1604897414, NULL),
+
+(98, 'Sunit Srivastava4', 'sunit4.srivastava@gmail.com', 'sunit123456', 'deafult.jpg', '$2y$10$9M9t3L.xqglL6P/gY9hP3.7ODmNTkh11J/GnIpVDB5BakoL6R4l6.', 3, 1, 1604898046, NULL),
+
+(99, 'Maryam Jameelah', 'maryamjameelah89@gmail.com', 'Maryamjameelah', 'deafult.jpg', '$2y$10$pRlinJeMbsfj.yEO0cZXPevGhjl1SVUH96dugH90QKvMvQHLTppMa', 3, 1, 1604993357, NULL),
+
+(100, 'Michael', 'armacdbdo@gmail.com', 'Mccullough', 'deafult.jpg', '$2y$10$.ebbfGwOcZ9Mn0vzpS63WeFU80t647zFVostuzt6PRgP1as9YUTjS', 3, 1, 1605005120, NULL);
+
+-- --------------------------------------------------------
+
+--
+
+-- Table structure for table `user_access_menu`
+
+--
+
+CREATE TABLE `user_access_menu` (
+
+  `id` int(11) NOT NULL,
+
+  `role_id` int(11) NOT NULL,
+
+  `menu_id` int(11) NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+
+-- Dumping data for table `user_access_menu`
+
+--
+
+INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
+
+(1, 1, 1),
+
+(2, 1, 2),
+
+(3, 2, 2),
+
+(6, 1, 3),
+
+(7, 1, 5);
+
+-- --------------------------------------------------------
+
+--
+
+-- Table structure for table `user_menu`
+
+--
+
+CREATE TABLE `user_menu` (
+
+  `id` int(11) NOT NULL,
+
+  `menu` varchar(128) NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+
+-- Dumping data for table `user_menu`
+
+--
+
+INSERT INTO `user_menu` (`id`, `menu`) VALUES
+
+(1, 'Admin'),
+
+(2, 'User'),
+
+(3, 'Menu');
+
+-- --------------------------------------------------------
+
+--
+
+-- Table structure for table `user_role`
+
+--
+
+CREATE TABLE `user_role` (
+
+  `id` int(11) NOT NULL,
+
+  `role` varchar(128) NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+
+-- Dumping data for table `user_role`
+
+--
+
+INSERT INTO `user_role` (`id`, `role`) VALUES
+
+(1, 'Administrator'),
+
+(2, 'Member'),
+
+(3, 'Foreigner');
+
+-- --------------------------------------------------------
+
+--
+
+-- Table structure for table `user_sub_menu`
+
+--
+
+CREATE TABLE `user_sub_menu` (
+
+  `id` int(11) NOT NULL,
+
+  `menu_id` int(11) NOT NULL,
+
+  `title` varchar(128) NOT NULL,
+
+  `url` varchar(128) NOT NULL,
+
+  `icon` varchar(128) NOT NULL,
+
+  `is_active` tinyint(1) NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+
+-- Dumping data for table `user_sub_menu`
+
+--
+
+INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active`) VALUES
+
+(1, 1, 'Dashboard', 'admin', 'fas fa-fw fa-tachometer-alt', 1),
+
+(2, 2, 'My Profile', 'user', 'fas fa-fw fa-user', 1),
+
+(3, 2, 'Edit Profile', 'user/edit', 'fas fa-fw fa-user-edit', 1),
+
+(4, 3, 'Menu Management', 'menu', 'fas fa-fw fa-folder', 1),
+
+(5, 3, 'Submenu Management', 'menu/submenu', 'fas fa-fw fa-folder-open', 1),
+
+(7, 1, 'Role', 'admin/role', 'fas fa-fw fa-user-tie', 1),
+
+(8, 2, 'Change Password', 'user/changepass', 'fas fa-fw fa-key', 1);
+
+--
+
+-- Indexes for dumped tables
+
+--
+
+--
+
+-- Indexes for table `tb_arrivalcard`
+
+--
+
+ALTER TABLE `tb_arrivalcard`
+
+  ADD PRIMARY KEY (`idarrival`);
+
+--
+
+-- Indexes for table `tb_office`
+
+--
+
+ALTER TABLE `tb_office`
+
+  ADD PRIMARY KEY (`idkanim`);
+
+--
+
+-- Indexes for table `tb_officecity`
+
+--
+
+ALTER TABLE `tb_officecity`
+
+  ADD PRIMARY KEY (`idcity`);
+
+--
+
+-- Indexes for table `tb_profile`
+
+--
+
+ALTER TABLE `tb_profile`
+
+  ADD PRIMARY KEY (`id`);
+
+--
+
+-- Indexes for table `user`
+
+--
+
+ALTER TABLE `user`
+
+  ADD PRIMARY KEY (`id`);
+
+--
+
+-- Indexes for table `user_access_menu`
+
+--
+
+ALTER TABLE `user_access_menu`
+
+  ADD PRIMARY KEY (`id`);
+
+--
+
+-- Indexes for table `user_menu`
+
+--
+
+ALTER TABLE `user_menu`
+
+  ADD PRIMARY KEY (`id`);
+
+--
+
+-- Indexes for table `user_role`
+
+--
+
+ALTER TABLE `user_role`
+
+  ADD PRIMARY KEY (`id`);
+
+--
+
+-- Indexes for table `user_sub_menu`
+
+--
+
+ALTER TABLE `user_sub_menu`
+
+  ADD PRIMARY KEY (`id`);
+
+--
+
+-- AUTO_INCREMENT for dumped tables
+
+--
+
+--
+
+-- AUTO_INCREMENT for table `tb_office`
+
+--
+
+ALTER TABLE `tb_office`
+
+  MODIFY `idkanim` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+
+-- AUTO_INCREMENT for table `tb_officecity`
+
+--
+
+ALTER TABLE `tb_officecity`
+
+  MODIFY `idcity` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+
+-- AUTO_INCREMENT for table `tb_profile`
+
+--
+
+ALTER TABLE `tb_profile`
+
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+
+--
+
+-- AUTO_INCREMENT for table `user`
+
+--
+
+ALTER TABLE `user`
+
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+
+--
+
+-- AUTO_INCREMENT for table `user_access_menu`
+
+--
+
+ALTER TABLE `user_access_menu`
+
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+
+-- AUTO_INCREMENT for table `user_menu`
+
+--
+
+ALTER TABLE `user_menu`
+
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+
+-- AUTO_INCREMENT for table `user_role`
+
+--
+
+ALTER TABLE `user_role`
+
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+
+-- AUTO_INCREMENT for table `user_sub_menu`
+
+--
+
+ALTER TABLE `user_sub_menu`
+
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
